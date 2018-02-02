@@ -19,7 +19,7 @@ def acquire_heatInfo(name):
     a =out.split()
     temp =[]
     for x in a :
-        temp.append(float(a[0].replace("\xc2\xb0C","")))
+        temp.append(float(x.replace("\xc2\xb0C","")))
     print temp
     temp.sort()
     print temp
