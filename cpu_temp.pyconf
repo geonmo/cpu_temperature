@@ -1,0 +1,21 @@
+modules {
+  module {
+    name = "cpu_temp"
+    language = "python"
+    # The following params are examples only
+    #  They are not actually used by the temp module
+    param ConstantValue {
+      value = 40
+    }
+  }
+}
+
+collection_group {
+  collect_every = 10
+  time_threshold = 50
+  metric {
+    name = "cpu_temp"
+    title = "Temperature"
+    value_threshold = 100
+  }
+}
