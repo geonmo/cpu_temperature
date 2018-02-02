@@ -21,7 +21,7 @@ def acquire_heatInfo(name):
     for x in a :
         temp.append(float(x.replace("\xc2\xb0C","")))
     temp.sort()
-    return temp[-1]
+    return int(temp[-1])
 
 def metric_init(params):
     global descriptors
