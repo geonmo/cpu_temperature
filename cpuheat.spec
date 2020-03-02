@@ -1,5 +1,5 @@
 Name: ganglia-plugin-cpuheat		
-Version:	0.1
+Version:	0.2
 Release:	1%{?dist}
 Summary:	This problem support the cpu temperature to ganglia
 
@@ -15,6 +15,7 @@ Requires:   ganglia-gmond-python
 Requires:   ganglia-gmond
 Requires:   /bin/bash
 Requires:   /usr/sbin/sensors-detect
+Requires:   systemd
 
 %description
 sensor?
@@ -50,5 +51,7 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Mon Mar 03 2020 Geonmo Ryu <geonmo@kisti.re.kr> - 0.2
+- Add a requirement about systemd
 * Mon Jan 21 2019 Geonmo <geonmo@kisti.re.kr> - 0.1
 - Initial RPM
