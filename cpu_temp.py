@@ -14,7 +14,7 @@ def subprocess_open(command):
 
 def acquire_heatInfo(name):
     result= []
-    cmd="/usr/bin/sensors | grep Physical | awk '{print $4}'"
+    cmd="/usr/bin/sensors | egrep \"Physical|Package\" | awk '{print $4}'"
     out, err = subprocess_open(cmd)
     a =out.split()
     temp =[]
