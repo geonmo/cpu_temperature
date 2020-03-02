@@ -6,7 +6,7 @@ Summary:	This problem support the cpu temperature to ganglia
 Group:		GSDC
 License:	GPL
 URL:		none
-Source0:	%{name}-%{version}.tar.gz
+Source0:        https://github.com/geonmo/%{name}/archive/v%{version}.tar.gz
 
 BuildRequires:	/bin/rm, /bin/mkdir, /bin/cp
 Requires:	lm_sensors >= 3.4.0 
@@ -22,10 +22,7 @@ sensor?
 
 %prep
 /usr/sbin/sensors-detect --auto
-#%setup -q
-
-
-
+%setup {Source0}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -46,8 +43,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(0644,root,root)/usr/lib64/ganglia/python_modules/cpu_temp.pyo
 %attr(0644,root,root)/etc/ganglia/conf.d/cpu_temp.pyconf
 
-#%doc
-
+%post 
+systemctl restart gmond
 
 
 %changelog
